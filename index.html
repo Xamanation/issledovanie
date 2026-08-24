@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Самодиагностика бизнеса — РНК 2026</title>
+<meta name="description" content="Бесплатная экспресс-диагностика 10 ключевых направлений бизнеса. Результат за 3 минуты + PDF-отчёт и рекомендации спикеров РНК 2026." />
+<link rel="preconnect" href="https://realnormconf.ru">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+
+<!-- ============== ШАПКА ============== -->
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="https://realnormconf.ru" target="_blank" rel="noopener">
+      <img src="https://realnormconf.ru/img/53301701.svg" alt="РНК 2026" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;brand__fallback&quot;>РНК 2026</span>')">
+      <span class="brand__txt"><b>РНК 2026</b><span>конференция для бизнеса</span></span>
+    </a>
+    <span class="event-chip"><span class="dot"></span>22 ОКТЯБРЯ 2026 · ЕКАТЕРИНБУРГ</span>
+    <nav>
+      <a href="#quiz">Диагностика</a>
+      <a href="#dashboard">Результаты</a>
+      <a href="#speakers">Спикеры</a>
+      <a href="#tickets-section">Билеты</a>
+      <a href="#contact">Отчёт</a>
+    </nav>
+    <div class="counter-pill" title="Сколько компаний уже прошли диагностику">
+      <span class="dot"></span>
+      <span>Прошли диагностику:&nbsp;<b id="counterNum">78</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero" style="padding:0">
+  <div class="hero__in">
+    <div>
+      <span class="kicker"><span class="ring"></span>Бесплатная экспресс-диагностика · 3 минуты</span>
+      <h1>10 точек здоровья <span>вашего бизнеса</span></h1>
+      <p class="lead">Пройдите самодиагностику по ключевым направлениям компании — от стратегии и финансов до клиентского сервиса и команды. Получите PDF-отчёт и персональные рекомендации спикеров конференции «РНК 2026».</p>
+      <div class="hero__meta">
+        <span>📅 <b>22 октября 2026</b></span>
+        <span>📍 <b>Екатеринбург</b>, Конгресс-отель</span>
+        <span>👥 <b>300+</b> участников</span>
+        <span>⏱ 1 день прикладной программы</span>
+      </div>
+      <div class="hero__cta">
+        <a href="#quiz" class="btn btn--primary">Пройти диагностику →</a>
+        <a href="#dashboard" class="btn btn--ghost">Посмотреть результаты</a>
+      </div>
+    </div>
+    <aside class="hero__card">
+      <h3>Что вы получите</h3>
+      <ul>
+        <li>Оценку 10 направлений бизнеса по шкале 1–5</li>
+        <li>Визуальный дашборд со стрелочными датчиками</li>
+        <li>PDF-отчёт на e-mail с подсказками по развитию</li>
+        <li>Подборку выступлений спикеров РНК под ваши слабые места</li>
+        <li>Промокод на скидку к билету на конференцию</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ============== БЛОК ВОПРОСОВ ============== -->
+<section id="quiz">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ЧТО ВЫ СМОЖЕТЕ ПРИМЕНИТЬ</span>
+      <h2>Оцените состояние вашего бизнеса</h2>
+      <p>Для каждого направления выберите оценку от 1 (всё плохо, не работает) до 5 (всё отлажено, приносит результат). Бегунок справа — это ваша самооценка. Все блоки идут по порядку, кнопок «Далее» нет — двигайте бегунки и сразу видите результат.</p>
+    </div>
+    <div id="qList" class="q-stack"></div>
+  </div>
+</section>
+
+<!-- ============== ДАШБОРД ============== -->
+<section id="dashboard" style="padding-top:32px">
+  <div class="wrap">
+    <div class="dash" id="dashCard">
+      <div class="dash-head">
+        <div>
+          <h3>Оперативные результаты</h3>
+          <p class="dash-sub">Датчики и подсчёты обновляются в реальном времени по мере того, как вы двигаете бегунки. Логика: <b>4–5 баллов</b> — сильные стороны, <b>2–4 балла</b> — требуют внимания, <b>1 балл</b> — критичные. Кликните на любую «пилюлю» ниже, чтобы раскрыть список блоков.</p>
+        </div>
+      </div>
+
+      <div class="kpis" id="kpis">
+        <div class="kpi" data-zone="strong" tabindex="0" role="button" aria-expanded="false">
+          <div class="kpi__top"><span>Сильные стороны</span><span class="chev">▼</span></div>
+          <div class="kpi__val" id="kpiStrong">0</div>
+          <div class="kpi__delta">блоков с оценкой 4–5</div>
+        </div>
+        <div class="kpi" data-zone="mid" tabindex="0" role="button" aria-expanded="false">
+          <div class="kpi__top"><span>Требуют внимания</span><span class="chev">▼</span></div>
+          <div class="kpi__val" id="kpiMid">0</div>
+          <div class="kpi__delta">блоков с оценкой 2–4</div>
+        </div>
+        <div class="kpi" data-zone="weak" tabindex="0" role="button" aria-expanded="false">
+          <div class="kpi__top"><span>Критичные</span><span class="chev">▼</span></div>
+          <div class="kpi__val" id="kpiWeak">0</div>
+          <div class="kpi__delta">блоков с оценкой 1</div>
+        </div>
+        <div class="kpi" data-zone="avg" tabindex="0" role="button" aria-expanded="false">
+          <div class="kpi__top"><span>Средний балл</span><span class="chev">▼</span></div>
+          <div class="kpi__val" id="kpiAvg">— <span class="denom">/ 10</span></div>
+          <div class="kpi__delta" id="kpiAvgSub">заполните все блоки</div>
+        </div>
+      </div>
+
+      <div class="zones" id="zones">
+        <div class="zone" data-zone="strong">
+          <button class="zone__head" type="button" aria-expanded="false">
+            <span class="zone__dot green"></span>
+            <span>
+              <span class="zone__title">Сильные стороны</span>
+              <span class="zone__sub">Блоки с оценкой <b>4 или 5</b> — опирайтесь на них при масштабировании.</span>
+            </span>
+            <span class="zone__count" id="zoneCountStrong">0</span>
+            <span class="zone__chev">▼</span>
+          </button>
+          <div class="zone__body"><ul class="zone__list" id="zoneListStrong"></ul></div>
+        </div>
+        <div class="zone" data-zone="mid">
+          <button class="zone__head" type="button" aria-expanded="false">
+            <span class="zone__dot amber"></span>
+            <span>
+              <span class="zone__title">Требуют внимания</span>
+              <span class="zone__sub">Блоки с оценкой <b>2, 3 или 4</b> — точка ближайшего роста, на которую стоит обратить внимание.</span>
+            </span>
+            <span class="zone__count" id="zoneCountMid">0</span>
+            <span class="zone__chev">▼</span>
+          </button>
+          <div class="zone__body"><ul class="zone__list" id="zoneListMid"></ul></div>
+        </div>
+        <div class="zone" data-zone="weak">
+          <button class="zone__head" type="button" aria-expanded="false">
+            <span class="zone__dot red"></span>
+            <span>
+              <span class="zone__title">Критичные</span>
+              <span class="zone__sub">Блоки с оценкой <b>1</b> — здесь нужен системный разбор, иначе они тормозят весь бизнес.</span>
+            </span>
+            <span class="zone__count" id="zoneCountWeak">0</span>
+            <span class="zone__chev">▼</span>
+          </button>
+          <div class="zone__body"><ul class="zone__list" id="zoneListWeak"></ul></div>
+        </div>
+      </div>
+
+      <div class="gauges" id="gauges"></div>
+
+      <div class="recs-head">
+        <div>
+          <h4>Рекомендованные секции РНК</h4>
+          <p>Под блоки, которые требуют внимания, — конкретные выступления спикеров с датой и временем.</p>
+        </div>
+      </div>
+      <div class="recs" id="recs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== СПИКЕРЫ (фото с сайта realnormconf.ru) ============== -->
+<section id="speakers" style="padding-top:32px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">О СПИКЕРАХ</span>
+      <h2>Кто рекомендует секции</h2>
+      <p>Практики с 10–25-летним опытом в маркетинге, сервисе, финансах, HR и операционном управлении. Все рекомендации в дашборде — с учётом их экспертизы.</p>
+    </div>
+    <div class="speakers">
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52419561.png" alt="Анна Криницына" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Анна Криницына</div>
+        <div class="speaker__role">Сервис, ex-Контур, ex-Ideco</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52932229.png" alt="Анна Исакова" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Анна Исакова</div>
+        <div class="speaker__role">Маркетинг, ex-CMO IT</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52932217.png" alt="Татьяна Щенникова" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Татьяна Щенникова</div>
+        <div class="speaker__role">CMO УЦСБ, B2B</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52932069.png" alt="Александр Лебедев" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Александр Лебедев</div>
+        <div class="speaker__role">Прод. маркетинг Ideco</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52957125.png" alt="Роман Нохрин" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Роман Нохрин</div>
+        <div class="speaker__role">CX, ВШЭ</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/53115901.png" alt="Галина Куртыгина" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Галина Куртыгина</div>
+        <div class="speaker__role">COO Artsofte, CX</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52932069.png" alt="Юлия Фуртат" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Юлия Фуртат</div>
+        <div class="speaker__role">HR, орг. развитие</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph" aria-label="Елена Масина">
+          <span style="font-family:'Unbounded',sans-serif">ЕМ</span>
+        </div>
+        <div class="speaker__name">Елена Масина</div>
+        <div class="speaker__role">Финансы и антикризис</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph" aria-label="Ирина Рудковская">
+          <span style="font-family:'Unbounded',sans-serif">ИР</span>
+        </div>
+        <div class="speaker__name">Ирина Рудковская</div>
+        <div class="speaker__role">Советник, Сбер Урал</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph" aria-label="Оргкомитет РНК">
+          <span style="font-family:'Unbounded',sans-serif">РНК</span>
+        </div>
+        <div class="speaker__name">Оргкомитет РНК</div>
+        <div class="speaker__role">программа конференции</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== БИЛЕТЫ (упрощённый блок — без цен) ============== -->
+<section id="tickets-section" style="padding-top:8px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">БИЛЕТЫ</span>
+      <h2>Приходите на РНК 2026</h2>
+      <p>22 октября 2026 года, Екатеринбург, Конгресс-отель. Один день прикладной программы, открытые дискуссии и нетворкинг с сильными собственниками и руководителями. <a class="inline-link" href="https://realnormconf.ru/" target="_blank" rel="noopener">Подробная программа и регистрация →</a></p>
+    </div>
+    <div class="tickets-cta">
+      <div class="tickets-cta__txt">
+        <h4>Купить билет на РНК 2026</h4>
+        <p>Все детали по тарифам — на официальном сайте конференции. Скидка по диагностике зафиксирована в промокоде, который появится в вашем PDF-отчёте.</p>
+        <span class="promo">🎟 Промокод DIAG2026: −15% — в PDF-отчёте</span>
+      </div>
+      <div class="tickets-cta__btn">
+        <a class="btn btn--primary" href="https://realnormconf.ru/" target="_blank" rel="noopener">Перейти к билетам →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ФОРМА ============== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <span class="eyebrow">ОТЧЁТ НА ПОЧТУ</span>
+        <h2>Получите PDF-отчёт на e-mail</h2>
+        <p>Отчёт придёт в течение 5 минут. Внутри — дашборд, разбор по каждому блоку и темы РНК, на которые стоит обратить внимание в первую очередь. Промокод на скидку — в финале письма.</p>
+      </div>
+      <form class="form" id="leadForm" novalidate>
+        <div class="row">
+          <div class="field"><label>Имя</label><input type="text" name="name" placeholder="Анна" required></div>
+          <div class="field"><label>Название организации</label><input type="text" name="company" placeholder="ООО «Розница+»" required></div>
+        </div>
+        <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="anna@company.ru" required></div>
+        <label class="consent">
+          <input type="checkbox" name="agree" required>
+          <span>Согласен(на) на обработку персональных данных и получение информационных материалов о конференции «РНК 2026».</span>
+        </label>
+        <button type="submit" class="btn btn--primary">Отправить мне отчёт →</button>
+        <div id="formMsg" style="font-size:13px;color:#bcd0ff;margin-top:6px"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ПОДВАЛ ============== -->
+<footer class="foot">
+  <div class="foot__in">
+    <div class="foot__brand">
+      <a href="https://realnormconf.ru/" target="_blank" rel="noopener"><img src="https://realnormconf.ru/img/53301701.svg" alt="РНК 2026" onerror="this.style.display='none'"></a>
+      <p>Реально Нормальная конференция — ежегодное событие в Екатеринбурге для собственников и руководителей бизнеса о росте, практиках, сервисе и управлении.</p>
+      <div class="foot__socials">
+        <a href="https://telegram.me/realnormconf_channel" target="_blank" rel="noopener" title="Telegram">TG</a>
+        <a href="https://vk.com/realnormconf" target="_blank" rel="noopener" title="ВКонтакте">VK</a>
+        <a href="https://realnormconf.ru/" target="_blank" rel="noopener" title="Сайт">SA</a>
+      </div>
+    </div>
+    <div>
+      <h5>Конференция</h5>
+      <ul>
+        <li><a href="#speakers">Спикеры</a></li>
+        <li><a href="https://realnormconf.ru/issledovanie/" target="_blank" rel="noopener">Исследование</a></li>
+        <li><a href="#tickets-section">Билеты</a></li>
+        <li><a href="https://realnormconf.ru/" target="_blank" rel="noopener">Программа</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Разделы диагностики</h5>
+      <ul>
+        <li><a href="#quiz">Стратегия и цели</a></li>
+        <li><a href="#quiz">Финансы и unit-экономика</a></li>
+        <li><a href="#quiz">Продажи и воронка</a></li>
+        <li><a href="#quiz">Клиентский сервис</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Контакты</h5>
+      <ul>
+        <li>events@realnormconf.ru</li>
+        <li>+7 (963) 031-64-71</li>
+        <li><b>22 октября 2026, 09:00</b></li>
+        <li>г. Екатеринбург, ул. Бебеля 59</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot__bottom">
+    <span>© 2026 РНК · Конференция · 22 октября 2026</span>
+    <a href="https://realnormconf.ru/" target="_blank" rel="noopener">realnormconf.ru →</a>
+  </div>
+</footer>
+
+<!-- ============== ПРОГРЕСС ВНИЗУ ============== -->
+<div id="progress" aria-label="Прогресс прохождения диагностики">
+  <div class="wrap-progress">
+    <div>
+      <div class="prog-bar" style="background:rgba(255,255,255,.08);height:6px;border-radius:999px;overflow:hidden"><div class="prog-bar__fill" id="progFill"></div></div>
+      <div class="prog-dots" id="progDots"></div>
+    </div>
+    <div class="prog-percent" id="progPercent">0%</div>
+  </div>
+</div>
+
+</body>
