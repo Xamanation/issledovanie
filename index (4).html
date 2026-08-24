@@ -1,0 +1,1381 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Самодиагностика бизнеса — РНК 2026</title>
+<meta name="description" content="Бесплатная экспресс-диагностика 10 ключевых направлений бизнеса. Результат за 3 минуты + PDF-отчёт и рекомендации спикеров РНК 2026." />
+<link rel="preconnect" href="https://realnormconf.ru">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =====================================================
+   Палитра — из оформления сайта realnormconf.ru
+   Тёмная подложка страницы + светлые карточки
+   ===================================================== */
+:root{
+  --indigo-900:#1a1f5c;
+  --indigo-800:#222a7a;
+  --indigo-700:#2b3893;
+  --indigo-600:#3344a8;
+  --indigo-500:#4658c9;
+  --indigo-50:#eef0fb;
+  --cyan-600:#1aa6e0;
+  --cyan-500:#2bb8ee;
+  --cyan-400:#5cccf3;
+  --cyan-50:#e8f6fc;
+  --ink:#0e1230;
+  --ink-2:#3a4070;
+  --muted:#7a82a8;
+  --line:#e5e8f5;
+
+  /* Тёмная подложка */
+  --bg:#0a0f1f;
+  --bg-2:#0f1530;
+  --bg-spot:#1a2152;
+
+  --card:#ffffff;
+  --red:#e23b53;
+  --red-soft:#fde2e7;
+  --amber:#e89c1a;
+  --amber-soft:#fcecce;
+  --green:#2bb673;
+  --green-soft:#d8f1e3;
+  --shadow-sm:0 4px 12px rgba(0,0,0,.35);
+  --shadow-md:0 10px 28px rgba(0,0,0,.45);
+  --shadow-lg:0 20px 50px rgba(0,0,0,.55);
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background-color:var(--bg);
+  background-image:
+      radial-gradient(900px 500px at 88% 6%, rgba(92,204,243,.10), transparent 60%),
+      radial-gradient(800px 600px at 6% 28%, rgba(70,88,201,.14), transparent 55%),
+      radial-gradient(700px 600px at 50% 100%, rgba(43,55,147,.18), transparent 60%);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:'Unbounded','Manrope',sans-serif;letter-spacing:-.01em}
+a{color:var(--indigo-700);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+/* ---------- Шапка (тёмная, поверх тёмной подложки) ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,15,31,.85);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  box-shadow:0 6px 24px rgba(0,0,0,.35);
+}
+.topbar__in{
+  max-width:1240px;margin:0 auto;
+  display:flex;align-items:center;gap:24px;
+  padding:14px 24px;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:38px;width:auto}
+/* Логотип с сайта — в цвете, без инверсии */
+.brand__txt{display:flex;flex-direction:column;line-height:1.1}
+.brand__txt b{font-family:'Unbounded',sans-serif;font-size:14px;color:#fff}
+.brand__txt span{font-size:12px;color:#9aa3c7}
+.topbar nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+.topbar nav a{font-size:14px;color:#cfd5ee;font-weight:500}
+.topbar nav a:hover{color:#fff;text-decoration:none}
+.topbar .event-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,#5cccf3,#1aa6e0);color:#0a0f1f;
+  padding:8px 14px;border-radius:999px;
+  font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+}
+.topbar .event-chip .dot{width:7px;height:7px;border-radius:50%;background:#0a0f1f;box-shadow:0 0 0 4px rgba(10,15,31,.15)}
+.counter-pill{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  padding:8px 14px;border-radius:999px;
+  font-size:13px;color:#dde2f5;font-weight:600;
+}
+.counter-pill b{color:#fff;font-family:'Unbounded',sans-serif;letter-spacing:-.02em}
+.counter-pill .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 0 0 rgba(43,182,115,.6);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(43,182,115,.6)}
+  70%{box-shadow:0 0 0 8px rgba(43,182,115,0)}
+  100%{box-shadow:0 0 0 0 rgba(43,182,115,0)}
+}
+
+/* ---------- Hero (тёмный и серый, в стиле realnormconf.ru) ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+      radial-gradient(900px 500px at 85% -10%, rgba(180,180,190,.20), transparent 60%),
+      radial-gradient(800px 600px at -10% 30%, rgba(120,120,135,.22), transparent 55%),
+      linear-gradient(135deg,#1a1d26 0%,#252832 55%,#2f323e 100%);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity:.35;pointer-events:none;
+}
+.hero__in{
+  position:relative;z-index:1;
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1.2fr 1fr;gap:48px;
+  padding:80px 24px 104px;
+  align-items:center;
+}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  padding:8px 14px;border-radius:999px;
+  font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#cfd2d8;font-weight:700;
+}
+.hero .kicker .ring{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#5cccf3,#1aa6e0);box-shadow:0 0 12px rgba(92,204,243,.6)}
+.hero h1{font-size:54px;line-height:1.04;margin:22px 0 20px;font-weight:800;color:#fff}
+.hero h1 span{
+  background:linear-gradient(90deg,#5cccf3,#fff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:18px;color:#d6d8de;max-width:580px;margin:0 0 28px}
+.hero__meta{
+  display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;
+}
+.hero__meta span{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  padding:8px 14px;border-radius:999px;
+  font-size:13px;font-weight:600;color:#e6e8ee;
+}
+.hero__meta span b{color:#fff;font-weight:700}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 22px;border-radius:12px;border:0;cursor:pointer;
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+}
+.btn--primary{
+  background:linear-gradient(135deg,var(--cyan-500),var(--cyan-600));
+  color:#fff;box-shadow:0 10px 24px rgba(26,166,224,.35);
+}
+.btn--primary:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(26,166,224,.45)}
+.btn--ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.btn--ghost:hover{background:rgba(255,255,255,.14)}
+.btn--ink{background:var(--indigo-800);color:#fff}
+.btn--ink:hover{background:var(--indigo-700)}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+.hero__card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:20px;padding:26px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+.hero__card h3{margin:0 0 14px;font-size:18px;color:#fff;letter-spacing:.02em}
+.hero__card ul{margin:0;padding:0;list-style:none;display:grid;gap:11px}
+.hero__card li{display:flex;align-items:center;gap:11px;font-size:14.5px;color:#dfe1e8;line-height:1.4}
+.hero__card li{position:relative}
+.hero__card li::before{
+  content:"✓";font-weight:800;color:#5cccf3;font-size:12px;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;border-radius:50%;
+  background:rgba(43,184,238,.20);flex:none;
+}
+
+/* ---------- Контент ---------- */
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:72px 0;position:relative}
+.section-head{margin-bottom:32px}
+.section-head .eyebrow{
+  display:inline-block;
+  font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--indigo-700);
+  background:var(--indigo-50);
+  padding:6px 12px;border-radius:999px;
+  margin-bottom:14px;
+}
+.section-head h2{font-size:36px;margin:0 0 12px;color:#fff;line-height:1.1;text-shadow:0 4px 18px rgba(0,0,0,.4)}
+.section-head p{margin:0;color:#c8cee8;font-size:17px;max-width:780px;line-height:1.55}
+.section-head a.inline-link{
+  color:#5cccf3;border-bottom:1px dashed rgba(92,204,243,.55);
+  text-decoration:none;
+}
+.section-head a.inline-link:hover{color:#fff;border-bottom-color:#fff;text-decoration:none}
+
+/* ---------- Вопросы (как блок «Что вы сможете применить») ---------- */
+.q-stack{display:grid;gap:16px}
+.q{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:var(--radius);
+  padding:22px 24px;
+  box-shadow:var(--shadow-sm);
+  display:grid;grid-template-columns:1.55fr 1fr;gap:28px;align-items:center;
+  transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease;
+}
+.q:hover{box-shadow:var(--shadow-md);border-color:rgba(92,204,243,.35)}
+.q__left{display:flex;flex-direction:column;gap:6px}
+.q__num{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11.5px;font-weight:700;color:var(--indigo-700);
+  text-transform:uppercase;letter-spacing:.08em;
+  margin-bottom:4px;
+}
+.q__num .num{
+  background:linear-gradient(135deg,var(--indigo-700),var(--indigo-600));
+  width:24px;height:24px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:12px;color:#fff;
+  box-shadow:0 4px 10px rgba(26,31,92,.35);
+}
+.q__title{margin:0;font-size:17px;font-weight:700;color:var(--ink);font-family:'Manrope',sans-serif;letter-spacing:0;line-height:1.35}
+.q__sub{margin:4px 0 0;color:var(--ink-2);font-size:14px;line-height:1.55}
+.q__ctrl{display:flex;flex-direction:column;gap:10px}
+.q__head{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);font-weight:600}
+.q__head b{font-family:'Unbounded',sans-serif;font-size:30px;color:var(--indigo-800);line-height:1}
+.q__scale{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);padding:0 2px;font-weight:500}
+.q__scale span{flex:1;text-align:center}
+.q__scale span:first-child{text-align:left}
+.q__scale span:last-child{text-align:right}
+
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:6px;
+  background:linear-gradient(90deg,var(--red) 0%,var(--amber) 50%,var(--green) 100%);
+  border-radius:999px;outline:none;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;
+  background:#fff;border:3px solid var(--indigo-700);cursor:pointer;
+  box-shadow:0 4px 12px rgba(26,31,92,.4);
+  transition:transform .15s ease;
+}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.08)}
+input[type=range]::-moz-range-thumb{
+  width:24px;height:24px;border-radius:50%;
+  background:#fff;border:3px solid var(--indigo-700);cursor:pointer;
+  box-shadow:0 4px 12px rgba(26,31,92,.4);
+}
+input[type=range]:focus{outline:none}
+
+/* ---------- Прогресс внизу ---------- */
+#progress{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  background:rgba(10,15,31,.96);
+  backdrop-filter:blur(14px);
+  border-top:1px solid rgba(255,255,255,.08);
+  box-shadow:0 -10px 30px rgba(0,0,0,.55);
+  padding:14px 24px 16px;
+  transform:translateY(110%);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+#progress.is-visible{transform:translateY(0)}
+#progress .wrap-progress{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;
+}
+.prog-bar{
+  position:relative;height:6px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;
+}
+.prog-bar__fill{
+  position:absolute;left:0;top:0;bottom:0;width:0%;
+  background:linear-gradient(90deg,var(--indigo-600),var(--cyan-500));
+  transition:width .35s ease;
+}
+.prog-dots{
+  display:grid;grid-template-columns:repeat(10,1fr);gap:6px;
+  margin-top:10px;
+}
+.prog-dot{
+  position:relative;text-align:center;
+  font-size:10.5px;line-height:1.15;color:#9aa3c7;
+  padding-top:16px;font-weight:500;
+}
+.prog-dot::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:10px;height:10px;border-radius:50%;
+  background:#3a4275;border:2px solid #0a0f1f;
+  box-shadow:0 0 0 1px #3a4275;
+  transition:all .25s ease;
+}
+.prog-dot.is-done::before{background:var(--indigo-500);box-shadow:0 0 0 1px var(--indigo-500)}
+.prog-dot.is-red::before{background:var(--red);box-shadow:0 0 0 1px var(--red)}
+.prog-dot.is-amber::before{background:var(--amber);box-shadow:0 0 0 1px var(--amber)}
+.prog-dot.is-green::before{background:var(--green);box-shadow:0 0 0 1px var(--green)}
+.prog-dot b{display:block;color:#cfd5ee;font-weight:700;font-size:10.5px;margin-bottom:1px;letter-spacing:.04em}
+.prog-percent{
+  font-family:'Unbounded',sans-serif;font-size:18px;color:#fff;
+  text-align:right;min-width:64px;letter-spacing:-.02em;
+}
+
+/* ---------- Дашборд ---------- */
+.dash{
+  background:linear-gradient(135deg,#ffffff 0%,#f0f3ff 100%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:20px;padding:30px;
+  box-shadow:var(--shadow-md);
+}
+.dash .dash-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:22px}
+.dash h3{margin:0;font-size:26px;color:var(--indigo-900)}
+.dash .dash-sub{margin:6px 0 0;color:var(--ink-2);font-size:14px;max-width:540px}
+
+/* ---------- KPI — интерактивные «пилюли» с числом ---------- */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+.kpi{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;
+  position:relative;overflow:hidden;
+  cursor:pointer;user-select:none;
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.kpi::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--indigo-600),var(--cyan-500));opacity:.7}
+.kpi:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-color:#c8d0eb}
+.kpi.is-active{border-color:var(--indigo-600);box-shadow:0 0 0 3px rgba(70,88,201,.18)}
+.kpi__top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:10px}
+.kpi__top .chev{font-size:10px;color:var(--indigo-700);transition:transform .2s ease}
+.kpi.is-active .chev{transform:rotate(180deg)}
+.kpi__val{font-family:'Unbounded',sans-serif;font-size:30px;color:var(--indigo-800);line-height:1;letter-spacing:-.02em}
+.kpi__val .denom{font-size:14px;color:var(--muted);font-family:'Manrope',sans-serif;font-weight:600;letter-spacing:0}
+.kpi__delta{font-size:12px;color:var(--ink-2);margin-top:8px}
+
+/* ---------- Разбор по зонам (раскрывающиеся карточки) ---------- */
+.zones{margin-top:18px;display:grid;gap:12px}
+.zone{
+  background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.zone:hover{box-shadow:var(--shadow-sm)}
+.zone.is-active{border-color:#c8d0eb;box-shadow:var(--shadow-sm)}
+.zone__head{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;cursor:pointer;
+  background:transparent;border:0;width:100%;text-align:left;
+  font-family:inherit;font-size:14px;color:inherit;
+}
+.zone__head:hover{background:rgba(70,88,201,.04)}
+.zone__dot{
+  width:12px;height:12px;border-radius:50%;flex:none;
+  box-shadow:0 0 0 4px rgba(0,0,0,.04);
+}
+.zone__dot.green{background:var(--green)}
+.zone__dot.amber{background:var(--amber)}
+.zone__dot.red{background:var(--red)}
+.zone__title{font-weight:700;font-size:15.5px;color:var(--ink)}
+.zone__sub{font-size:13px;color:var(--ink-2);margin-top:2px}
+.zone__count{
+  margin-left:auto;
+  font-family:'Unbounded',sans-serif;font-size:18px;
+  color:var(--indigo-800);
+  background:var(--indigo-50);
+  padding:6px 12px;border-radius:999px;
+  letter-spacing:-.02em;
+}
+.zone__chev{
+  margin-left:10px;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:8px;
+  background:var(--indigo-50);color:var(--indigo-700);
+  transition:transform .2s ease, background .2s ease;
+  font-size:12px;font-weight:800;
+}
+.zone.is-active .zone__chev{transform:rotate(180deg);background:var(--indigo-700);color:#fff}
+.zone__body{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s ease, padding .35s ease;
+  padding:0 18px;
+}
+.zone.is-active .zone__body{max-height:2000px;padding:0 18px 18px}
+.zone__empty{
+  font-size:13.5px;color:var(--muted);font-style:italic;padding:6px 0 4px;
+}
+.zone__list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.zone__item{
+  display:grid;grid-template-columns:46px 1fr auto;gap:14px;align-items:center;
+  background:#f8faff;border:1px solid #e6eaf7;border-radius:12px;
+  padding:12px 14px;
+}
+.zone__score{
+  font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;
+  color:#fff;background:linear-gradient(135deg,var(--indigo-700),var(--indigo-600));
+  width:46px;height:46px;border-radius:10px;
+  display:inline-flex;align-items:center;justify-content:center;
+  letter-spacing:-.02em;
+  box-shadow:0 4px 10px rgba(26,31,92,.25);
+}
+.zone__score.green{background:linear-gradient(135deg,#2bb673,#1f8e57)}
+.zone__score.amber{background:linear-gradient(135deg,#e89c1a,#c47d12)}
+.zone__score.red{background:linear-gradient(135deg,#e23b53,#a8243a)}
+.zone__name{font-weight:700;font-size:14.5px;color:var(--ink);line-height:1.3}
+.zone__why{font-size:13px;color:var(--ink-2);margin-top:3px;line-height:1.45}
+.zone__tip{
+  margin-top:8px;display:flex;flex-wrap:wrap;gap:8px;
+}
+.zone__tip a{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12.5px;font-weight:700;color:var(--cyan-600);
+  background:var(--cyan-50);border:1px solid #cfe9f6;
+  padding:5px 10px;border-radius:999px;text-decoration:none;
+}
+.zone__tip a:hover{background:#d4eef9;text-decoration:none}
+
+.gauges{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:22px}
+.gauge{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 10px 14px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.gauge:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.gauge svg{display:block}
+.gauge__name{font-size:12.5px;color:var(--ink-2);font-weight:700;margin-top:8px;line-height:1.25;min-height:30px}
+.gauge__val{font-family:'Unbounded',sans-serif;font-size:20px;line-height:1;margin-top:2px;letter-spacing:-.02em}
+.gauge__zone{font-size:10px;text-transform:uppercase;letter-spacing:.05em;font-weight:700;margin-top:5px}
+
+/* ---------- Рекомендации (стиль карточек секций) ---------- */
+.recs-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:10px;margin:30px 0 14px}
+.recs-head h4{margin:0;font-size:18px;color:var(--indigo-900)}
+.recs-head p{margin:4px 0 0;color:var(--ink-2);font-size:13px}
+.recs{display:grid;gap:12px}
+.rec{
+  display:grid;grid-template-columns:96px auto 1fr auto;gap:18px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.rec:hover{border-color:#d8def0;box-shadow:var(--shadow-sm)}
+.rec__time{
+  font-family:'Unbounded',sans-serif;font-size:13px;color:var(--indigo-700);
+  background:var(--indigo-50);
+  padding:10px 12px;border-radius:10px;line-height:1.15;text-align:center;
+  border:1px solid #d8def0;
+}
+.rec__time small{display:block;font-size:10.5px;color:var(--indigo-600);font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:.04em;margin-top:3px}
+.rec__time b{display:block;font-size:16px;color:var(--indigo-900);margin-top:2px}
+.rec__date{
+  font-size:11px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em;font-weight:700;
+  margin-bottom:4px;
+}
+.rec__badge{
+  width:50px;height:50px;border-radius:12px;
+  background:linear-gradient(135deg,var(--indigo-700),var(--indigo-600));
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;
+  box-shadow:0 6px 16px rgba(26,31,92,.25);
+}
+.rec__title{font-weight:700;color:var(--ink);font-size:15.5px;margin:0 0 6px;line-height:1.35}
+.rec__sub{font-size:13.5px;color:var(--ink-2);margin:0;line-height:1.5}
+.rec__when{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:8px;font-size:12px;font-weight:700;color:var(--cyan-600);
+  background:var(--cyan-50);border:1px solid #cfe9f6;
+  padding:5px 11px;border-radius:999px;
+}
+.rec__btn{
+  background:var(--indigo-700);color:#fff;border:0;border-radius:10px;
+  padding:11px 18px;font-size:13px;font-weight:700;cursor:pointer;
+  font-family:'Manrope',sans-serif;white-space:nowrap;
+  transition:background .15s ease,transform .15s ease;
+}
+.rec__btn:hover{background:var(--indigo-800);transform:translateY(-1px)}
+
+/* ---------- Спикеры (фотографии с сайта конференции) ---------- */
+.speakers{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:22px;
+}
+.speaker{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.speaker:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.speaker__ph{
+  position:relative;
+  width:72px;height:72px;border-radius:50%;margin:0 auto 12px;
+  background:linear-gradient(135deg,var(--indigo-700),var(--cyan-500));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:'Unbounded',sans-serif;font-weight:700;font-size:20px;
+  overflow:hidden;
+  box-shadow:0 6px 16px rgba(26,31,92,.25);
+}
+.speaker__ph img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  border-radius:50%;
+}
+.speaker__name{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.3}
+.speaker__role{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.35}
+
+/* ---------- Билеты (упрощённый блок — только CTA) ---------- */
+.tickets-cta{
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  background:linear-gradient(135deg,#ffffff 0%,#f0f3ff 100%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:18px;padding:26px 28px;margin-top:22px;
+  box-shadow:var(--shadow-md);
+}
+.tickets-cta__txt h4{margin:0 0 6px;font-family:'Unbounded',sans-serif;font-size:22px;color:var(--indigo-900)}
+.tickets-cta__txt p{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+.tickets-cta__txt .promo{
+  margin-top:10px;display:inline-flex;align-items:center;gap:8px;
+  background:var(--cyan-50);color:var(--cyan-600);
+  border:1px solid #cfe9f6;
+  font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;
+}
+.tickets-cta__btn{display:flex;gap:10px;align-items:center}
+@media (max-width:860px){
+  .tickets-cta{grid-template-columns:1fr;gap:16px}
+  .tickets-cta__btn{justify-self:start}
+}
+
+/* ---------- Форма ---------- */
+.cta{
+  background:
+      radial-gradient(800px 500px at 100% -20%, rgba(92,204,243,.15), transparent 60%),
+      linear-gradient(135deg,#0f1335 0%,#1a1f5c 55%,#2b3893 100%);
+  color:#fff;border-radius:22px;padding:42px;
+  display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center;
+  box-shadow:var(--shadow-lg);
+  position:relative;overflow:hidden;
+  border:1px solid rgba(255,255,255,.06);
+}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:18px 18px;opacity:.5;pointer-events:none;
+}
+.cta > *{position:relative;z-index:1}
+.cta .eyebrow{
+  display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:#5cccf3;background:rgba(92,204,243,.10);
+  padding:6px 12px;border-radius:999px;margin-bottom:14px;
+}
+.cta h2{color:#fff;margin:0 0 12px;font-size:30px;line-height:1.15}
+.cta p{color:#cfd5ff;margin:0;line-height:1.55}
+.form{display:grid;gap:12px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;color:#dde2ff;font-weight:600}
+.field input{
+  width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);color:#fff;font-size:15px;font-family:inherit;
+  transition:border-color .15s ease,background .15s ease;
+}
+.field input::placeholder{color:rgba(255,255,255,.5)}
+.field input:focus{outline:none;border-color:var(--cyan-400);background:rgba(255,255,255,.14)}
+.consent{display:flex;align-items:flex-start;gap:10px;font-size:12.5px;color:#dde2ff;line-height:1.45}
+.consent input{margin-top:3px;accent-color:var(--cyan-400)}
+.consent a{color:#fff;text-decoration:underline}
+.form .btn{width:100%;padding:16px;font-size:16px;margin-top:6px}
+
+/* ---------- Подвал (тёмный) ---------- */
+.foot{
+  border-top:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,#0a0f1f 0%,#060914 100%);
+  padding:36px 0 28px;color:#cfd5ee;
+}
+.foot__in{
+  max-width:1240px;margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;
+  font-size:13px;
+}
+.foot h5{margin:0 0 12px;font-family:'Unbounded',sans-serif;font-size:13px;color:#fff;letter-spacing:.04em;text-transform:uppercase}
+.foot ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.foot a{color:#9aa3c7}
+.foot a:hover{color:#fff;text-decoration:none}
+.foot__brand{display:flex;flex-direction:column;gap:12px}
+.foot__brand img{height:36px;width:auto}
+.foot__brand p{margin:0;line-height:1.5;color:#9aa3c7}
+.foot__socials{display:flex;gap:8px;margin-top:6px}
+.foot__socials a{
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.06);color:#cfd5ee;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;border:1px solid rgba(255,255,255,.1);
+}
+.foot__socials a:hover{background:linear-gradient(135deg,#5cccf3,#1aa6e0);color:#0a0f1f;border-color:transparent}
+.foot__bottom{
+  max-width:1240px;margin:24px auto 0;padding:18px 24px 0;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  color:#9aa3c7;font-size:12px;
+}
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 1024px){
+  .hero h1{font-size:44px}
+  .speakers{grid-template-columns:repeat(3,1fr)}
+  .gauges{grid-template-columns:repeat(3,1fr)}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width: 860px){
+  .topbar nav{display:none}
+  .topbar .event-chip{display:none}
+  .hero__in{grid-template-columns:1fr;padding:56px 24px 76px}
+  .hero h1{font-size:36px}
+  .q{grid-template-columns:1fr;gap:16px;padding:20px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .gauges{grid-template-columns:repeat(2,1fr)}
+  .cta{grid-template-columns:1fr;padding:32px}
+  .form .row{grid-template-columns:1fr}
+  .prog-dots{grid-template-columns:repeat(5,1fr);row-gap:10px}
+  .prog-dot{font-size:9.5px}
+  .speakers{grid-template-columns:repeat(2,1fr)}
+  .rec{grid-template-columns:1fr;gap:10px}
+  .rec__time{justify-self:start}
+  .rec__btn{justify-self:start}
+  .foot__in{grid-template-columns:1fr 1fr}
+  .zone__item{grid-template-columns:40px 1fr;row-gap:8px}
+  .zone__score{width:40px;height:40px;font-size:16px}
+}
+@media (max-width: 520px){
+  .hero h1{font-size:30px}
+  .section-head h2{font-size:26px}
+  .gauges{grid-template-columns:1fr 1fr}
+  .foot__in{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============== ШАПКА ============== -->
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="https://realnormconf.ru" target="_blank" rel="noopener">
+      <img src="https://realnormconf.ru/img/53301701.svg" alt="РНК 2026" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;brand__fallback&quot;>РНК 2026</span>')">
+      <span class="brand__txt"><b>РНК 2026</b><span>конференция для бизнеса</span></span>
+    </a>
+    <span class="event-chip"><span class="dot"></span>22 ОКТЯБРЯ 2026 · ЕКАТЕРИНБУРГ</span>
+    <nav>
+      <a href="#quiz">Диагностика</a>
+      <a href="#dashboard">Результаты</a>
+      <a href="#speakers">Спикеры</a>
+      <a href="#tickets-section">Билеты</a>
+      <a href="#contact">Отчёт</a>
+    </nav>
+    <div class="counter-pill" title="Сколько компаний уже прошли диагностику">
+      <span class="dot"></span>
+      <span>Прошли диагностику:&nbsp;<b id="counterNum">78</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero" style="padding:0">
+  <div class="hero__in">
+    <div>
+      <span class="kicker"><span class="ring"></span>Бесплатная экспресс-диагностика · 3 минуты</span>
+      <h1>10 точек здоровья <span>вашего бизнеса</span></h1>
+      <p class="lead">Пройдите самодиагностику по ключевым направлениям компании — от стратегии и финансов до клиентского сервиса и команды. Получите PDF-отчёт и персональные рекомендации спикеров конференции «РНК 2026».</p>
+      <div class="hero__meta">
+        <span>📅 <b>22 октября 2026</b></span>
+        <span>📍 <b>Екатеринбург</b>, Конгресс-отель</span>
+        <span>👥 <b>300+</b> участников</span>
+        <span>⏱ 1 день прикладной программы</span>
+      </div>
+      <div class="hero__cta">
+        <a href="#quiz" class="btn btn--primary">Пройти диагностику →</a>
+        <a href="#dashboard" class="btn btn--ghost">Посмотреть результаты</a>
+      </div>
+    </div>
+    <aside class="hero__card">
+      <h3>Что вы получите</h3>
+      <ul>
+        <li>Оценку 10 направлений бизнеса по шкале 1–5</li>
+        <li>Визуальный дашборд со стрелочными датчиками</li>
+        <li>PDF-отчёт на e-mail с подсказками по развитию</li>
+        <li>Подборку выступлений спикеров РНК под ваши слабые места</li>
+        <li>Промокод на скидку к билету на конференцию</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ============== БЛОК ВОПРОСОВ ============== -->
+<section id="quiz">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ЧТО ВЫ СМОЖЕТЕ ПРИМЕНИТЬ</span>
+      <h2>Оцените состояние вашего бизнеса</h2>
+      <p>Для каждого направления выберите оценку от 1 (всё плохо, не работает) до 5 (всё отлажено, приносит результат). Бегунок справа — это ваша самооценка. Все блоки идут по порядку, кнопок «Далее» нет — двигайте бегунки и сразу видите результат.</p>
+    </div>
+    <div id="qList" class="q-stack"></div>
+  </div>
+</section>
+
+<!-- ============== ДАШБОРД ============== -->
+<section id="dashboard" style="padding-top:32px">
+  <div class="wrap">
+    <div class="dash" id="dashCard">
+      <div class="dash-head">
+        <div>
+          <h3>Оперативные результаты</h3>
+          <p class="dash-sub">Датчики и подсчёты обновляются в реальном времени по мере того, как вы двигаете бегунки. Логика: <b>4–5 баллов</b> — сильные стороны, <b>2–4 балла</b> — требуют внимания, <b>1 балл</b> — критичные. Кликните на любую «пилюлю» ниже, чтобы раскрыть список блоков.</p>
+        </div>
+      </div>
+
+      <div class="kpis" id="kpis">
+        <div class="kpi" data-zone="strong" tabindex="0" role="button" aria-expanded="false">
+          <div class="kpi__top"><span>Сильные стороны</span><span class="chev">▼</span></div>
+          <div class="kpi__val" id="kpiStrong">0</div>
+          <div class="kpi__delta">блоков с оценкой 4–5</div>
+        </div>
+        <div class="kpi" data-zone="mid" tabindex="0" role="button" aria-expanded="false">
+          <div class="kpi__top"><span>Требуют внимания</span><span class="chev">▼</span></div>
+          <div class="kpi__val" id="kpiMid">0</div>
+          <div class="kpi__delta">блоков с оценкой 2–4</div>
+        </div>
+        <div class="kpi" data-zone="weak" tabindex="0" role="button" aria-expanded="false">
+          <div class="kpi__top"><span>Критичные</span><span class="chev">▼</span></div>
+          <div class="kpi__val" id="kpiWeak">0</div>
+          <div class="kpi__delta">блоков с оценкой 1</div>
+        </div>
+        <div class="kpi" data-zone="avg" tabindex="0" role="button" aria-expanded="false">
+          <div class="kpi__top"><span>Средний балл</span><span class="chev">▼</span></div>
+          <div class="kpi__val" id="kpiAvg">— <span class="denom">/ 10</span></div>
+          <div class="kpi__delta" id="kpiAvgSub">заполните все блоки</div>
+        </div>
+      </div>
+
+      <div class="zones" id="zones">
+        <div class="zone" data-zone="strong">
+          <button class="zone__head" type="button" aria-expanded="false">
+            <span class="zone__dot green"></span>
+            <span>
+              <span class="zone__title">Сильные стороны</span>
+              <span class="zone__sub">Блоки с оценкой <b>4 или 5</b> — опирайтесь на них при масштабировании.</span>
+            </span>
+            <span class="zone__count" id="zoneCountStrong">0</span>
+            <span class="zone__chev">▼</span>
+          </button>
+          <div class="zone__body"><ul class="zone__list" id="zoneListStrong"></ul></div>
+        </div>
+        <div class="zone" data-zone="mid">
+          <button class="zone__head" type="button" aria-expanded="false">
+            <span class="zone__dot amber"></span>
+            <span>
+              <span class="zone__title">Требуют внимания</span>
+              <span class="zone__sub">Блоки с оценкой <b>2, 3 или 4</b> — точка ближайшего роста, на которую стоит обратить внимание.</span>
+            </span>
+            <span class="zone__count" id="zoneCountMid">0</span>
+            <span class="zone__chev">▼</span>
+          </button>
+          <div class="zone__body"><ul class="zone__list" id="zoneListMid"></ul></div>
+        </div>
+        <div class="zone" data-zone="weak">
+          <button class="zone__head" type="button" aria-expanded="false">
+            <span class="zone__dot red"></span>
+            <span>
+              <span class="zone__title">Критичные</span>
+              <span class="zone__sub">Блоки с оценкой <b>1</b> — здесь нужен системный разбор, иначе они тормозят весь бизнес.</span>
+            </span>
+            <span class="zone__count" id="zoneCountWeak">0</span>
+            <span class="zone__chev">▼</span>
+          </button>
+          <div class="zone__body"><ul class="zone__list" id="zoneListWeak"></ul></div>
+        </div>
+      </div>
+
+      <div class="gauges" id="gauges"></div>
+
+      <div class="recs-head">
+        <div>
+          <h4>Рекомендованные секции РНК</h4>
+          <p>Под блоки, которые требуют внимания, — конкретные выступления спикеров с датой и временем.</p>
+        </div>
+      </div>
+      <div class="recs" id="recs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== СПИКЕРЫ (фото с сайта realnormconf.ru) ============== -->
+<section id="speakers" style="padding-top:32px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">О СПИКЕРАХ</span>
+      <h2>Кто рекомендует секции</h2>
+      <p>Практики с 10–25-летним опытом в маркетинге, сервисе, финансах, HR и операционном управлении. Все рекомендации в дашборде — с учётом их экспертизы.</p>
+    </div>
+    <div class="speakers">
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52419561.png" alt="Анна Криницына" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Анна Криницына</div>
+        <div class="speaker__role">Сервис, ex-Контур, ex-Ideco</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52932229.png" alt="Анна Исакова" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Анна Исакова</div>
+        <div class="speaker__role">Маркетинг, ex-CMO IT</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52932217.png" alt="Татьяна Щенникова" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Татьяна Щенникова</div>
+        <div class="speaker__role">CMO УЦСБ, B2B</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52932069.png" alt="Александр Лебедев" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Александр Лебедев</div>
+        <div class="speaker__role">Прод. маркетинг Ideco</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52957125.png" alt="Роман Нохрин" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Роман Нохрин</div>
+        <div class="speaker__role">CX, ВШЭ</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/53115901.png" alt="Галина Куртыгина" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Галина Куртыгина</div>
+        <div class="speaker__role">COO Artsofte, CX</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph">
+          <img src="https://realnormconf.ru/img/52932069.png" alt="Юлия Фуртат" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="speaker__name">Юлия Фуртат</div>
+        <div class="speaker__role">HR, орг. развитие</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph" aria-label="Елена Масина">
+          <span style="font-family:'Unbounded',sans-serif">ЕМ</span>
+        </div>
+        <div class="speaker__name">Елена Масина</div>
+        <div class="speaker__role">Финансы и антикризис</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph" aria-label="Ирина Рудковская">
+          <span style="font-family:'Unbounded',sans-serif">ИР</span>
+        </div>
+        <div class="speaker__name">Ирина Рудковская</div>
+        <div class="speaker__role">Советник, Сбер Урал</div>
+      </div>
+      <div class="speaker">
+        <div class="speaker__ph" aria-label="Оргкомитет РНК">
+          <span style="font-family:'Unbounded',sans-serif">РНК</span>
+        </div>
+        <div class="speaker__name">Оргкомитет РНК</div>
+        <div class="speaker__role">программа конференции</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== БИЛЕТЫ (упрощённый блок — без цен) ============== -->
+<section id="tickets-section" style="padding-top:8px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">БИЛЕТЫ</span>
+      <h2>Приходите на РНК 2026</h2>
+      <p>22 октября 2026 года, Екатеринбург, Конгресс-отель. Один день прикладной программы, открытые дискуссии и нетворкинг с сильными собственниками и руководителями. <a class="inline-link" href="https://realnormconf.ru/" target="_blank" rel="noopener">Подробная программа и регистрация →</a></p>
+    </div>
+    <div class="tickets-cta">
+      <div class="tickets-cta__txt">
+        <h4>Купить билет на РНК 2026</h4>
+        <p>Все детали по тарифам — на официальном сайте конференции. Скидка по диагностике зафиксирована в промокоде, который появится в вашем PDF-отчёте.</p>
+        <span class="promo">🎟 Промокод DIAG2026: −15% — в PDF-отчёте</span>
+      </div>
+      <div class="tickets-cta__btn">
+        <a class="btn btn--primary" href="https://realnormconf.ru/" target="_blank" rel="noopener">Перейти к билетам →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ФОРМА ============== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <span class="eyebrow">ОТЧЁТ НА ПОЧТУ</span>
+        <h2>Получите PDF-отчёт на e-mail</h2>
+        <p>Отчёт придёт в течение 5 минут. Внутри — дашборд, разбор по каждому блоку и темы РНК, на которые стоит обратить внимание в первую очередь. Промокод на скидку — в финале письма.</p>
+      </div>
+      <form class="form" id="leadForm" novalidate>
+        <div class="row">
+          <div class="field"><label>Имя</label><input type="text" name="name" placeholder="Анна" required></div>
+          <div class="field"><label>Название организации</label><input type="text" name="company" placeholder="ООО «Розница+»" required></div>
+        </div>
+        <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="anna@company.ru" required></div>
+        <label class="consent">
+          <input type="checkbox" name="agree" required>
+          <span>Согласен(на) на обработку персональных данных и получение информационных материалов о конференции «РНК 2026».</span>
+        </label>
+        <button type="submit" class="btn btn--primary">Отправить мне отчёт →</button>
+        <div id="formMsg" style="font-size:13px;color:#bcd0ff;margin-top:6px"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ПОДВАЛ ============== -->
+<footer class="foot">
+  <div class="foot__in">
+    <div class="foot__brand">
+      <a href="https://realnormconf.ru/" target="_blank" rel="noopener"><img src="https://realnormconf.ru/img/53301701.svg" alt="РНК 2026" onerror="this.style.display='none'"></a>
+      <p>Реально Нормальная конференция — ежегодное событие в Екатеринбурге для собственников и руководителей бизнеса о росте, практиках, сервисе и управлении.</p>
+      <div class="foot__socials">
+        <a href="https://telegram.me/realnormconf_channel" target="_blank" rel="noopener" title="Telegram">TG</a>
+        <a href="https://vk.com/realnormconf" target="_blank" rel="noopener" title="ВКонтакте">VK</a>
+        <a href="https://realnormconf.ru/" target="_blank" rel="noopener" title="Сайт">SA</a>
+      </div>
+    </div>
+    <div>
+      <h5>Конференция</h5>
+      <ul>
+        <li><a href="#speakers">Спикеры</a></li>
+        <li><a href="https://realnormconf.ru/issledovanie/" target="_blank" rel="noopener">Исследование</a></li>
+        <li><a href="#tickets-section">Билеты</a></li>
+        <li><a href="https://realnormconf.ru/" target="_blank" rel="noopener">Программа</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Разделы диагностики</h5>
+      <ul>
+        <li><a href="#quiz">Стратегия и цели</a></li>
+        <li><a href="#quiz">Финансы и unit-экономика</a></li>
+        <li><a href="#quiz">Продажи и воронка</a></li>
+        <li><a href="#quiz">Клиентский сервис</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Контакты</h5>
+      <ul>
+        <li>events@realnormconf.ru</li>
+        <li>+7 (963) 031-64-71</li>
+        <li><b>22 октября 2026, 09:00</b></li>
+        <li>г. Екатеринбург, ул. Бебеля 59</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot__bottom">
+    <span>© 2026 РНК · Конференция · 22 октября 2026</span>
+    <a href="https://realnormconf.ru/" target="_blank" rel="noopener">realnormconf.ru →</a>
+  </div>
+</footer>
+
+<!-- ============== ПРОГРЕСС ВНИЗУ ============== -->
+<div id="progress" aria-label="Прогресс прохождения диагностики">
+  <div class="wrap-progress">
+    <div>
+      <div class="prog-bar" style="background:rgba(255,255,255,.08);height:6px;border-radius:999px;overflow:hidden"><div class="prog-bar__fill" id="progFill"></div></div>
+      <div class="prog-dots" id="progDots"></div>
+    </div>
+    <div class="prog-percent" id="progPercent">0%</div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   Перечень блоков диагностики — реальные направления бизнеса
+   + комментарий «почему» и подсказки к секциям РНК
+   ========================================================= */
+const BLOCKS = [
+  { id:'strategy',  name:'Стратегия и цели',         short:'Стратегия',
+    q:'Есть ли у компании понятная стратегия на 1–3 года, доведённая до команды, с измеримыми KPI?',
+    why:'Без стратегии любая инициатива превращается в набор разрозненных действий.',
+    tipTopic:'strategy' },
+  { id:'finance',   name:'Финансы и unit-экономика',  short:'Финансы',
+    q:'Видите ли вы в реальном времени картину доходов, расходов и маржи по направлениям, а не раз в квартал?',
+    why:'Скрытая маржа съедает рост: видеть деньги ежедневно — базовое требование.',
+    tipTopic:'finance' },
+  { id:'sales',     name:'Продажи и воронка',         short:'Продажи',
+    q:'Измеряется ли конверсия на каждом этапе воронки и понятно, где теряются клиенты?',
+    why:'Если не знаете, где клиент уходит, — рост продаж случайный.',
+    tipTopic:'sales' },
+  { id:'marketing', name:'Маркетинг и клиенты',       short:'Маркетинг',
+    q:'Есть ли система привлечения и удержания клиентов, а не разовые акции «по настроению»?',
+    why:'Без системы каждый месяц приходится заново «придумывать» поток клиентов.',
+    tipTopic:'marketing' },
+  { id:'product',   name:'Продукт и ассортимент',     short:'Продукт',
+    q:'Насколько системно вы обновляете ассортимент и проверяете гипотезы до запуска?',
+    why:'Без гипотез новый продукт — лотерея: либо попадёт, либо провалится.',
+    tipTopic:'product' },
+  { id:'ops',       name:'Операции и процессы',       short:'Операции',
+    q:'Задокументированы ли ключевые процессы и понятно ли, кто за что отвечает?',
+    why:'Когда процессы «в голове» у одного человека, бизнес завязан на нём одного.',
+    tipTopic:'ops' },
+  { id:'team',      name:'Команда и оргструктура',    short:'Команда',
+    q:'Есть ли прозрачные роли, регулярная обратная связь и понятная система мотивации?',
+    why:'Размытые роли = конфликты, выгорание ключевых людей и замедление роста.',
+    tipTopic:'team' },
+  { id:'legal',     name:'Юридическая защита и комплаенс', short:'Комплаенс',
+    q:'В порядке ли договоры, лицензии, требования по маркировке и нормативы вашей отрасли?',
+    why:'Один штраф или сорванная поставка из-за просрочки лицензии может обнулить прибыль за квартал.',
+    tipTopic:'legal' },
+  { id:'service',   name:'Клиентский сервис',         short:'Сервис',
+    q:'Знаете ли вы NPS, скорость ответа и где клиент «буксует» при обращении?',
+    why:'Сервис «на глазок» — главная причина, почему клиенты уходят тихо, без претензий.',
+    tipTopic:'service' },
+  { id:'tech',      name:'Автоматизация и данные',    short:'Автоматизация',
+    q:'Используете ли вы системы учёта, CRM и дашборды или по-прежнему «всё в Excel и голове»?',
+    why:'Ручные процессы не масштабируются: рост x2 даёт x2 ошибок и срывов сроков.',
+    tipTopic:'tech' }
+];
+
+/* =========================================================
+   Подсказки: какие секции РНК рекомендовать.
+   Темы и время взяты из официальной программы сайта realnormconf.ru
+   (утренний блок, 22 октября 2026). Все секции проходят 22 октября 2026 года.
+   ========================================================= */
+const RECS = {
+  strategy:  { topic:'Открытие конференции: «Сдохнуть, выжить или расти?»', speakers:'Анна Исакова · Анна Криницына',         time:'10:00–10:10', when:'22 октября 2026 · 10:00–10:10', reason:'Старт дня: главные вызовы и повестка конференции — помогает сверить свою стратегию с рынком УрФО.' },
+  finance:   { topic:'Мастер-класс: «Как объединить сервис, маркетинг и HR в единую стратегию»', speakers:'Галина Куртыгина',                time:'10:50–11:30', when:'22 октября 2026 · 10:50–11:30', reason:'Разбирают сквозной контур «деньги → клиент → команда», чтобы финансы были видны каждый день.' },
+  sales:     { topic:'Питч-сессия: можно ли расти в кризис и где теряются деньги', speakers:'Анна Криницына · Анна Исакова · Татьяна Щенникова', time:'10:10–10:50', when:'22 октября 2026 · 10:10–10:50', reason:'3 питча от практиков маркетинга, сервиса и HR про рост, работу с командой и AI в продажах.' },
+  marketing: { topic:'Доклад: «Не все отзывы надо слушать» — решения, которые усиливают бизнес', speakers:'Роман Нохрин',                       time:'11:30–12:00', when:'22 октября 2026 · 11:30–12:00', reason:'17+ лет в CX: какие сигналы клиентов реально влияют на рост, а какие — шум.' },
+  product:   { topic:'Питч-сессия: «Помогает ли AI в работе и сможет ли заменить человека?»', speakers:'Александр Лебедев · Анна Исакова',     time:'10:10–10:50', when:'22 октября 2026 · 10:10–10:50', reason:'Разбор реальных кейсов применения AI в продукте и ограничений, о которых важно знать заранее.' },
+  ops:       { topic:'Мастер-класс: «Как объединить сервис, маркетинг и HR в единую стратегию»', speakers:'Галина Куртыгина',                time:'10:50–11:30', when:'22 октября 2026 · 10:50–11:30', reason:'Готовые шаблоны сквозных процессов и чек-листы, которые внедряются за 2 недели.' },
+  team:      { topic:'Питч-сессия: «Как работать с командой в кризисное время?»', speakers:'Юлия Фуртат · Анна Криницына',          time:'10:10–10:50', when:'22 октября 2026 · 10:10–10:50', reason:'Прямые ответы практиков: удержание, мотивация, роль руководителя в турбулентности.' },
+  legal:     { topic:'Исследование бизнеса УрФО — тренды, нормативы, регуляторика', speakers:'Оргкомитет РНК · Анна Исакова',         time:'10:00–10:10', when:'22 октября 2026 · 10:00–10:10', reason:'Свежий срез по 300+ компаниям 15 отраслей Урала — сверяете свои риски с рынком.' },
+  service:   { topic:'Доклад: «Не все отзывы надо слушать» — решения, которые усиливают бизнес', speakers:'Роман Нохрин',                       time:'11:30–12:00', when:'22 октября 2026 · 11:30–12:00', reason:'Подход к клиентскому сервису, в котором NPS перестаёт быть «средней температурой по больнице».' },
+  tech:      { topic:'Питч-сессия: «Помогает ли AI в работе и сможет ли заменить человека?»', speakers:'Александр Лебедев · Анна Исакова',     time:'10:10–10:50', when:'22 октября 2026 · 10:10–10:50', reason:'Подборка интеграций и готовых дашбордов под типовые процессы среднего бизнеса.' }
+};
+
+const state = { answers: Array(10).fill(3), initialized:false };
+
+const gaugeTo10 = v => 1 + (v - 1) * (9 / 4);
+function zoneColor(v10){
+  if (v10 <= 3) return { c:'red',   label:'критично',         hex:'#e23b53' };
+  if (v10 <= 8) return { c:'amber', label:'требует внимания', hex:'#e89c1a' };
+  return         { c:'green', label:'всё в порядке',                hex:'#2bb673' };
+}
+
+/* =========================================================
+   Зоны по 5-балльной шкале бегунков:
+     сильные       → оценка 4 или 5
+     требуют внимания → оценка 2, 3 или 4
+     критичные     → оценка 1
+   (4 балла попадают в обе «позитивные» категории — это требование заказчика.)
+   ========================================================= */
+function classifyByScore(score){
+  if (score === 1)                  return ['weak'];        // критичные
+  if (score === 5)                  return ['strong'];      // сильные
+  if (score === 4)                  return ['strong','mid'];// 4 — и сильная, и требует внимания
+  if (score === 2 || score === 3)   return ['mid'];         // требуют внимания
+  return [];
+}
+
+/* ---------- счётчик компаний ----------
+   База: ровно 78. Каждое прохождение диагностики (отправка формы)
+   прибавляет +1 к счётчику и сохраняет в localStorage. */
+const COUNTER_BASE = 78;
+function getCounter(){
+  try{
+    const stored = parseInt(localStorage.getItem('rnk_counter') || '0', 10);
+    if (Number.isFinite(stored) && stored >= COUNTER_BASE) return stored;
+  }catch(e){}
+  return COUNTER_BASE;
+}
+function setCounter(n){ try{ localStorage.setItem('rnk_counter', String(n)); }catch(e){} }
+function paintCounter(){
+  const el = document.getElementById('counterNum');
+  if (!el) return;
+  const target = getCounter();
+  const start = parseInt((el.textContent || '0').replace(/\s+/g,''), 10) || COUNTER_BASE;
+  if (start === target){ el.textContent = target.toLocaleString('ru'); return; }
+  const dur = 900;
+  const t0 = performance.now();
+  function tick(t){
+    const k = Math.min(1, (t - t0) / dur);
+    const v = Math.round(start + (target - start) * k);
+    el.textContent = v.toLocaleString('ru');
+    if (k < 1) requestAnimationFrame(tick);
+    else setCounter(target);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ---------- построение вопросов ---------- */
+function buildQuiz(){
+  const list = document.getElementById('qList');
+  list.innerHTML = '';
+  BLOCKS.forEach((b, i) => {
+    const item = document.createElement('div');
+    item.className = 'q';
+    item.dataset.idx = i;
+    item.innerHTML = `
+      <div class="q__left">
+        <span class="q__num"><span class="num">${i+1}</span>${b.name}</span>
+        <h4 class="q__title">${b.name}</h4>
+        <p class="q__sub">${b.q}</p>
+      </div>
+      <div class="q__ctrl">
+        <div class="q__head">
+          <span>Ваша оценка</span>
+          <b class="score" data-score>${state.answers[i]}</b>
+        </div>
+        <input type="range" min="1" max="5" step="1" value="${state.answers[i]}" data-input>
+        <div class="q__scale">
+          <span>1 · не работает</span><span>2</span><span>3</span><span>4</span><span>5 · всё готово</span>
+        </div>
+      </div>`;
+    list.appendChild(item);
+    const range = item.querySelector('[data-input]');
+    const score = item.querySelector('[data-score]');
+    range.addEventListener('input', () => {
+      const v = parseInt(range.value, 10);
+      state.answers[i] = v;
+      score.textContent = v;
+      paintGauges();
+      paintProgress();
+      paintKpis();
+      paintZones();
+      paintRecs();
+    });
+  });
+}
+
+/* ---------- прогресс-бар внизу ---------- */
+function buildProgressDots(){
+  const wrap = document.getElementById('progDots');
+  wrap.innerHTML = '';
+  BLOCKS.forEach((b, i) => {
+    const d = document.createElement('div');
+    d.className = 'prog-dot';
+    d.dataset.idx = i;
+    d.innerHTML = `<b>${i+1}</b>${b.short}`;
+    wrap.appendChild(d);
+  });
+}
+function paintProgress(){
+  const total = BLOCKS.length;
+  const done = state.answers.filter(v => v !== null && v !== undefined).length;
+  const pct = Math.round(done / total * 100);
+  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('progPercent').textContent = pct + '%';
+  document.querySelectorAll('.prog-dot').forEach((dot, i) => {
+    dot.classList.remove('is-done','is-red','is-amber','is-green');
+    const v = state.answers[i];
+    if (v === null || v === undefined) return;
+    const v10 = gaugeTo10(v);
+    dot.classList.add('is-done');
+    const z = zoneColor(v10);
+    dot.classList.add('is-' + z.c);
+  });
+  const prog = document.getElementById('progress');
+  if (done > 0) prog.classList.add('is-visible');
+}
+
+/* ---------- датчики ---------- */
+function buildGaugesGrid(){
+  const grid = document.getElementById('gauges');
+  grid.innerHTML = '';
+  BLOCKS.forEach((b, i) => {
+    const g = document.createElement('div');
+    g.className = 'gauge';
+    g.innerHTML = `
+      <svg viewBox="0 0 120 80" width="100%" height="80" aria-hidden="true">
+        <path d="M15 70 A45 45 0 0 1 33 35"  stroke="#e23b53" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M33 35 A45 45 0 0 1 87 35"  stroke="#e89c1a" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M87 35 A45 45 0 0 1 105 70" stroke="#2bb673" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <g class="needle" data-needle="${i}">
+          <line x1="60" y1="70" x2="60" y2="30" stroke="#1a1f5c" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="60" cy="70" r="5" fill="#1a1f5c"/>
+        </g>
+      </svg>
+      <div class="gauge__name">${b.short}</div>
+      <div class="gauge__val" data-gval="${i}">—</div>
+      <div class="gauge__zone" data-gzone="${i}">—</div>`;
+    grid.appendChild(g);
+  });
+}
+function paintGauges(){
+  BLOCKS.forEach((b, i) => {
+    const v5  = state.answers[i] ?? 3;
+    const v10 = gaugeTo10(v5);
+    const z   = zoneColor(v10);
+    const needle = document.querySelector(`[data-needle="${i}"]`);
+    if (needle) needle.setAttribute('transform', `rotate(${-90 + (v10 - 1) / 9 * 180} 60 70)`);
+    const gval  = document.querySelector(`[data-gval="${i}"]`);
+    const gzone = document.querySelector(`[data-gzone="${i}"]`);
+    if (gval){ gval.textContent = v10.toFixed(1); gval.style.color = z.hex; }
+    if (gzone){ gzone.textContent = z.label; gzone.style.color = z.hex; }
+  });
+}
+
+/* ---------- KPI: средний балл + счётчики по зонам ---------- */
+function paintKpis(){
+  const vs = state.answers.map(gaugeTo10);
+  const avg = vs.reduce((s,v)=>s+v,0) / vs.length;
+
+  /* Считаем по 5-балльной шкале — это и есть «категории пользователя» */
+  let strong = 0, mid = 0, weak = 0;
+  state.answers.forEach(score => {
+    const cats = classifyByScore(score);
+    if (cats.includes('strong')) strong++;
+    if (cats.includes('mid'))    mid++;
+    if (cats.includes('weak'))   weak++;
+  });
+
+  document.getElementById('kpiAvg').innerHTML = `${avg.toFixed(1)} <span class="denom">/ 10</span>`;
+  document.getElementById('kpiAvgSub').textContent =
+    avg >= 8 ? 'отличная управляемость' :
+    avg >= 5 ? 'есть точки роста' :
+    'нужны системные изменения';
+  document.getElementById('kpiStrong').textContent = strong;
+  document.getElementById('kpiMid').textContent    = mid;
+  document.getElementById('kpiWeak').textContent   = weak;
+}
+
+/* ---------- Подробный разбор по зонам (раскрывающиеся карточки) ---------- */
+function buildZonesToggles(){
+  document.querySelectorAll('.kpi[data-zone]').forEach(kpi => {
+    const z = kpi.dataset.zone;
+    const zone = document.querySelector(`.zone[data-zone="${z}"]`);
+    if (!zone) return;
+    const toggle = () => {
+      const active = zone.classList.toggle('is-active');
+      kpi.classList.toggle('is-active', active);
+      const btn = zone.querySelector('.zone__head');
+      if (btn) btn.setAttribute('aria-expanded', active ? 'true' : 'false');
+      kpi.setAttribute('aria-expanded', active ? 'true' : 'false');
+    };
+    kpi.addEventListener('click', toggle);
+    kpi.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    const head = zone.querySelector('.zone__head');
+    if (head) head.addEventListener('click', toggle);
+  });
+}
+function buildZoneItem(b, idx, score, kind){
+  /* kind: 'green' | 'amber' | 'red' */
+  const tip = RECS[b.tipTopic];
+  const tipHTML = tip ? `
+    <div class="zone__tip">
+      <a href="#dashboard">📅 ${tip.when.split(' · ')[1] || tip.when}</a>
+      <a href="#dashboard">🎤 ${tip.speakers.split(' · ')[0]}</a>
+      <a href="#dashboard">Подробнее →</a>
+    </div>` : '';
+  return `
+    <li class="zone__item">
+      <div class="zone__score ${kind}">${score}</div>
+      <div>
+        <div class="zone__name">${b.name}</div>
+        <div class="zone__why">${b.why}</div>
+        ${tipHTML}
+      </div>
+    </li>`;
+}
+function paintZones(){
+  const listStrong = document.getElementById('zoneListStrong');
+  const listMid    = document.getElementById('zoneListMid');
+  const listWeak   = document.getElementById('zoneListWeak');
+  const cntStrong  = document.getElementById('zoneCountStrong');
+  const cntMid     = document.getElementById('zoneCountMid');
+  const cntWeak    = document.getElementById('zoneCountWeak');
+
+  const strongHTML = [], midHTML = [], weakHTML = [];
+
+  BLOCKS.forEach((b, idx) => {
+    const score = state.answers[idx];
+    if (score === null || score === undefined) return;
+    const cats = classifyByScore(score);
+    if (cats.includes('strong')) strongHTML.push(buildZoneItem(b, idx, score, 'green'));
+    if (cats.includes('mid'))    midHTML.push(buildZoneItem(b, idx, score, 'amber'));
+    if (cats.includes('weak'))   weakHTML.push(buildZoneItem(b, idx, score, 'red'));
+  });
+
+  listStrong.innerHTML = strongHTML.length
+    ? strongHTML.join('')
+    : '<li class="zone__empty">Пока ни одного блока в сильной зоне — двигайте бегунки и оцените направления, где у вас всё работает.</li>';
+  listMid.innerHTML = midHTML.length
+    ? midHTML.join('')
+    : '<li class="zone__empty">Здесь пусто. Это значит, что либо оценки 2–4 ещё не выставлены, либо все ваши блоки уже либо «сильные», либо «критичные».</li>';
+  listWeak.innerHTML = weakHTML.length
+    ? weakHTML.join('')
+    : '<li class="zone__empty">Критичных блоков нет — отлично! Ни одно направление не оценено в 1 балл.</li>';
+
+  cntStrong.textContent = strongHTML.length;
+  cntMid.textContent    = midHTML.length;
+  cntWeak.textContent   = weakHTML.length;
+}
+
+/* ---------- Рекомендации спикеров (карточки секций) ---------- */
+function paintRecs(){
+  const wrap = document.getElementById('recs');
+  wrap.innerHTML = '';
+  BLOCKS.forEach((b, i) => {
+    const v5 = state.answers[i];
+    const v10 = gaugeTo10(v5);
+    if (v10 >= 9) return;
+    const rec = RECS[b.id];
+    const card = document.createElement('div');
+    card.className = 'rec';
+    const timeParts = rec.time.split('–');
+    card.innerHTML = `
+      <div class="rec__time">${timeParts[0]}–<b>${timeParts[1] || ''}</b><small>22 окт 2026</small></div>
+      <div class="rec__badge">${b.short.slice(0,2).toUpperCase()}</div>
+      <div>
+        <p class="rec__title">${rec.topic}</p>
+        <p class="rec__sub">Спикеры: ${rec.speakers} · ${rec.reason}</p>
+        <span class="rec__when">📅 ${rec.when}</span>
+      </div>
+      <button class="rec__btn" data-topic="${i}">Записаться</button>`;
+    wrap.appendChild(card);
+  });
+  if (!wrap.children.length){
+    wrap.innerHTML = '<div class="rec" style="grid-template-columns:1fr"><div><p class="rec__title">Все блоки в зелёной зоне 🎉</p><p class="rec__sub">Приходите на РНК 2026 за продвинутыми практиками и нетворкингом.</p></div></div>';
+  }
+}
+
+/* ---------- форма ----------
+   Каждая успешная отправка = +1 к счётчику «Прошли диагностику». */
+function bindForm(){
+  const form = document.getElementById('leadForm');
+  const msg  = document.getElementById('formMsg');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    if (!data.name || !data.company || !data.email || !data.agree){
+      msg.textContent = 'Пожалуйста, заполните все поля и подтвердите согласие.';
+      msg.style.color = '#ffb4c2';
+      return;
+    }
+    msg.style.color = '#bcd0ff';
+    msg.textContent = 'Готово! Отчёт отправлен на ' + data.email + '. Промокод: DIAG2026 (−15% на билет РНК 2026).';
+    /* +1 к счётчику после каждого прошедшего */
+    const newCount = getCounter() + 1;
+    setCounter(newCount);
+    paintCounter();
+    form.reset();
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  buildQuiz();
+  buildProgressDots();
+  buildGaugesGrid();
+  buildZonesToggles();
+  paintGauges();
+  paintProgress();
+  paintKpis();
+  paintZones();
+  paintRecs();
+  paintCounter();
+  bindForm();
+});
+</script>
+</body>
+</html>
